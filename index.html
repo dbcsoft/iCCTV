@@ -86,12 +86,12 @@
             <div class="item features-image сol-12 col-md-6 col-lg-4">
                 <div class="item-wrapper">
                     <div class="item-img">
-                            <iframe width="500" height="300" src="https://178.128.22.114/cctv1.html"></iframe>
+                            <iframe width="500" height="300" src="http://66.203.157.36:39000/playRTSP.html"></iframe>
                     </div>
                     <div class="item-content">
-                        <h5 class="item-title mbr-fonts-style display-5"><strong>Hong Kong CCTV 1</strong></h5>
+                        <h5 class="item-title mbr-fonts-style display-5"><strong>MTR CH1</strong></h5>
                         
-                        <p class="mbr-text mbr-fonts-style mt-3 display-7">Location: East Rail Station A, Zone A<br>Status: Online<br></p>
+                        <p class="mbr-text mbr-fonts-style mt-3 display-7">[RTSP to ffmpeg to RTMP]<br>Playing in FLV (Less Delay)<br></p>
                     </div>
                     <div class="mbr-section-btn item-footer mt-2"><a href="" class="btn item-btn btn-danger display-4" target="_blank"><span class="mobi-mbri mobi-mbri-video-play mbr-iconfont mbr-iconfont-btn"></span>Playback</a></div>
                 </div>
@@ -99,12 +99,12 @@
             <div class="item features-image сol-12 col-md-6 col-lg-4">
                 <div class="item-wrapper">
                     <div class="item-img">
-                        <iframe width="500" height="300" src="https://178.128.22.114/cctv2.html"></iframe>
+                        <iframe width="500" height="300" src="http://66.203.157.36:39000/playHLSrtsp.html"></iframe>
                     </div>
                     <div class="item-content">
-                        <h5 class="item-title mbr-fonts-style display-5"><strong>Hong Kong CCTV 2</strong></h5>
+                        <h5 class="item-title mbr-fonts-style display-5"><strong>MTR CH1</strong></h5>
                         
-                        <p class="mbr-text mbr-fonts-style mt-3 display-7">Location: East Rail Station A, Zone B<br>Status: Online</p>
+                        <p class="mbr-text mbr-fonts-style mt-3 display-7">[RTSP to ffmpeg to RTMP]<br>Playing in HLS (More Delay)</p>
                     </div>
                     <div class="mbr-section-btn item-footer mt-2"><a href="" class="btn item-btn btn-danger display-4" target="_blank"><span class="mobi-mbri mobi-mbri-video-play mbr-iconfont mbr-iconfont-btn"></span>Playback&nbsp;</a></div>
                 </div>
@@ -112,12 +112,12 @@
             <div class="item features-image сol-12 col-md-6 col-lg-4">
                 <div class="item-wrapper">
                     <div class="item-img">
-                        <iframe width="500" height="300" src="https://www.youtube.com/embed/ApBf6w-1dAQ"></iframe>
+                        <iframe width="500" height="300" src="http://66.203.157.36:39000/playFLV03.html"></iframe>
                     </div>
                     <div class="item-content">
-                        <h5 class="item-title mbr-fonts-style display-5"><strong>Hong Kong CCTV 3</strong></h5>
+                        <h5 class="item-title mbr-fonts-style display-5"><strong>User CH3 (APP, OBS)</strong></h5>
                         
-                        <p class="mbr-text mbr-fonts-style mt-3 display-7">Location: East Rail Station A, Zone C<br>Status: Offline<br></p>
+                        <p class="mbr-text mbr-fonts-style mt-3 display-7">rtmp://66.203.157.36:31935/flv03/mydemo3<br>Playing in FLV (Less Delay)<br></p>
                     </div>
                     <div class="mbr-section-btn item-footer mt-2"><a href="" class="btn item-btn btn-danger display-4" target="_blank"><span class="mobi-mbri mobi-mbri-video-play mbr-iconfont mbr-iconfont-btn"></span>Playback&nbsp;</a></div>
                 </div>
@@ -149,8 +149,8 @@
                         <span class="step-number mbr-fonts-style display-5">1</span>
                     </div>
                     <div class="text-box">
-                        <h4 class="icon-title card-title mbr-black mbr-fonts-style display-7"><strong>Live Video Capture from Mobile Phone (Video Encoding)</strong></h4>
-                        <h5 class="icon-text mbr-black mbr-fonts-style display-4">Use a mobile app such as "RTMP Live Streaming" (https://apps.apple.com/us/app/rtmp-live-streaming/id1343854366) for iOS or "OBS Desktop Software" (MacOS / Windows) to stream live video to our RTMP server (Nginx)</h5>
+                        <h4 class="icon-title card-title mbr-black mbr-fonts-style display-7"><strong>Video Source CH1</strong></h4>
+                        <h5 class="icon-text mbr-black mbr-fonts-style display-4">CH1 is from MTR's rtsp. The Ngnix streaming server transcodes the rtsp to rtpm through ffmpeg. The rtmp is then transcoded to FLV and HLS for displaying web. Note that FLV transcoding speed is faster than HLS.</h5>
                     </div>
                 </div>
                 <div class="item mbr-flex">
@@ -158,8 +158,8 @@
                         <span class="step-number mbr-fonts-style display-5">2</span>
                     </div>
                     <div class="text-box">
-                        <h4 class="icon-title card-title mbr-black mbr-fonts-style display-7"><strong>RTMP Streaming Server (RTMP Push)</strong></h4>
-                        <h5 class="icon-text mbr-black mbr-fonts-style display-4">An Nginx open source RTMP server is setup to accept video stream from specific CCTV with "Stream Key" as ID. Demo server at: "rtmp://178.128.22.114/icctv") . This server supports HLS (.m3u8) and DASH (.mpd) over http. This demo uses HLS.</h5>
+                        <h4 class="icon-title card-title mbr-black mbr-fonts-style display-7"><strong>Video Source CH3</strong></h4>
+                        <h5 class="icon-text mbr-black mbr-fonts-style display-4">User pushes video stream from any rtmp streaming app on mobile or desktop (i.e. OBS) through rtmp://66.203.157.36:31935/flv03/mydemo3 with mydemo3 being the "stream key". This video is transcoded to FLV for web display</h5>
                     </div>
                 </div>
                 <div class="item mbr-flex last">
@@ -167,8 +167,8 @@
                         <span class="step-number mbr-fonts-style display-5">3</span>
                     </div>
                     <div class="text-box">
-                        <h4 class="icon-title card-title mbr-black mbr-fonts-style display-7"><strong>Live Video Viewing on Web (RTMP Pull)</strong></h4>
-                        <h5 class="icon-text mbr-black mbr-fonts-style display-4">A web client (https://dbcsoft.github.io/iCCTV/) over http or https is connected to the RTMP server to pull and display the 2 live videos. Due to streaming server location in Singapore and limited server resources, video delay is expected. No performance tuning has been done for this demo.</h5>
+                        <h4 class="icon-title card-title mbr-black mbr-fonts-style display-7"><strong>FLV vs HLS</strong></h4>
+                        <h5 class="icon-text mbr-black mbr-fonts-style display-4">FLV has less delay than HLS, however, HLS can be displayed on most major web browers while FLV cannot be displayed on Safari</h5>
                     </div>
                 </div>
                 
@@ -202,4 +202,3 @@
   
 </body>
 </html>
-
